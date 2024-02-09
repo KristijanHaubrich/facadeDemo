@@ -12,8 +12,11 @@ public class Team {
     LightTank lightTank = new LightTank();
     MediumTank mediumTank = new MediumTank();
     HeavyTank heavyTank = new HeavyTank();
+
     public Team(String name){this.name = name;}
+
     private int getCurrentTeamHP(){return this.lightTank.currentHP() + this.mediumTank.currentHP() + this.heavyTank.currentHP();}
+
     public Tank getDefender(){
         int number =  new Random().nextInt(31);
         if(number < 11){
@@ -31,15 +34,18 @@ public class Team {
             else return this.lightTank;
         }
     }
+
     public boolean isTeamDestroyed(){
         return this.lightTank.isDestroyed() && this.mediumTank.isDestroyed() && this.heavyTank.isDestroyed();
     }
 
-    @Override
-    public String toString(){return "TEAM "+ this.name + ":\nHP LEFT:" + getCurrentTeamHP() + "\n--------------------------------------------------\n" + this.lightTank.toString() + "--------------------------------------------------\n" + this.mediumTank.toString() + "--------------------------------------------------\n" + this.heavyTank.toString();}
     public void shootWithLightTank(Tank tank){ this.lightTank.shoot(tank); }
     public void shootWithMediumTank(Tank tank){ this.mediumTank.shoot(tank); }
     public void shootWithHeavyTank(Tank tank){this.heavyTank.shoot(tank);}
+
+    @Override
+    public String toString(){return "TEAM "+ this.name + ":\nHP LEFT:" + getCurrentTeamHP() + "\n--------------------------------------------------\n" + this.lightTank.toString() + "--------------------------------------------------\n" + this.mediumTank.toString() + "--------------------------------------------------\n" + this.heavyTank.toString();}
+
 
 
 }
