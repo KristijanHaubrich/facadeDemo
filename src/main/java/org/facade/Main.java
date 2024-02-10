@@ -36,11 +36,11 @@ public class Main {
                 while(pick.equals("no")){
                     System.out.println(team1Name + " PICK ATTACKER (press l for light tank, m for medium tank or h for heavy tank):");
                     pick = stdIn.readLine();
-                    if(pick.equals("l")) {
+                    if(pick.equals("l") && !team1.isLightDestroyed()) {
                         team1.shootWithLightTank(team2.getDefender());
-                    }else if(pick.equals("m")){
+                    }else if(pick.equals("m") && !team1.isMediumDestroyed()){
                         team1.shootWithMediumTank(team2.getDefender());
-                    }else if(pick.equals("h")){
+                    }else if(pick.equals("h") && !team1.isHeavyDestroyed()){
                         team1.shootWithHeavyTank(team2.getDefender());
                     }else{
                         System.out.println("wrong input\n");
@@ -55,14 +55,14 @@ public class Main {
                 while(pick.equals("no")){
                     System.out.println(team2Name + " PICK ATTACKER (press l for light tank, m for medium tank or h for heavy tank):");
                     pick = stdIn.readLine();
-                    if(pick.equals("l")) {
+                    if(pick.equals("l") && !team2.isLightDestroyed()) {
                         team2.shootWithLightTank(team1.getDefender());
-                    }else if(pick.equals("m")){
+                    }else if(pick.equals("m") && !team2.isMediumDestroyed()){
                         team2.shootWithMediumTank(team1.getDefender());
-                    }else if(pick.equals("h")){
+                    }else if(pick.equals("h") && !team2.isHeavyDestroyed()){
                         team2.shootWithHeavyTank(team1.getDefender());
                     }else{
-                        System.out.println("wrong input\n");
+                        System.out.println("wrong input or tank is already destroyed\n");
                         pick = "no";
                     }
                 }
@@ -85,7 +85,11 @@ public class Main {
                 round++;
             }
             if(team1.isTeamDestroyed()) System.out.println("WINNER IS " + team2Name);
-            else System.out.println("WINNER IS " + team1Name);
+            else{
+                System.out.println("--------------------------------------------------");
+                System.out.println("WINNER IS " + team1Name);
+                System.out.println("--------------------------------------------------");
+            }
 
         } catch (IOException e) {
             e.printStackTrace();

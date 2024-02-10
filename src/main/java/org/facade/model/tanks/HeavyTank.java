@@ -13,7 +13,7 @@ public class HeavyTank implements Tank {
     private int kills;
     public HeavyTank(){
         this.granate = new HeavyTankGranate();
-        this.hitPoints = 3500;
+        this.hitPoints = 2000;
         this.armor = 300;
         this.dmg = 0;
         this.kills = 0;
@@ -53,7 +53,7 @@ public class HeavyTank implements Tank {
             this.hitPoints = this.hitPoints - granate.getDmg();
             return new ShootingResult(granate.getDmg(), false,false);
 
-        } else return new ShootingResult(granate.getDmg(),false,false); //just dealing damage
+        } else return new ShootingResult(0,false,false); //just dealing damage
     }
     @Override
     public boolean isDestroyed(){

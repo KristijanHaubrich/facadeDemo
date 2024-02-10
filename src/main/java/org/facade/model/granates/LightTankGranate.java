@@ -7,8 +7,8 @@ public class LightTankGranate implements Granate {
     private int penetration;
 
     public LightTankGranate(){
-        this.dmg = 350;
-        this.penetration = 303;
+        this.dmg = 250;
+        this.penetration = 203;
     }
     @Override
     public int getDmg() {

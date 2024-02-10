@@ -13,7 +13,7 @@ public class LightTank implements Tank {
     private int kills;
     public LightTank(){
         this.granate = new LightTankGranate();
-        this.hitPoints = 1500;
+        this.hitPoints = 1250;
         this.armor = 100;
         this.dmg = 0;
         this.kills = 0;
@@ -53,7 +53,7 @@ public class LightTank implements Tank {
             this.hitPoints = this.hitPoints - granate.getDmg();
             return new ShootingResult(granate.getDmg(), false,false);
 
-        } else return new ShootingResult(granate.getDmg(),false,false); //just dealing damage
+        } else return new ShootingResult(0,false,false); //just dealing damage
     }
     @Override
     public boolean isDestroyed(){

@@ -13,7 +13,7 @@ public class MediumTank implements Tank {
     private int kills;
     public MediumTank(){
         this.granate = new MediumTankGranate();
-        this.hitPoints = 2500;
+        this.hitPoints = 1600;
         this.armor = 200;
         this.dmg = 0;
         this.kills = 0;
@@ -54,7 +54,7 @@ public class MediumTank implements Tank {
             this.hitPoints = this.hitPoints - granate.getDmg();
             return new ShootingResult(granate.getDmg(), false,false);
 
-        } else return new ShootingResult(granate.getDmg(),false,false); //just dealing damage
+        } else return new ShootingResult(0,false,false); //just dealing damage
     }
     @Override
     public boolean isDestroyed(){

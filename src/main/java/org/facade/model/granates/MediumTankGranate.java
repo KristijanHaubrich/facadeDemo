@@ -6,7 +6,7 @@ public class MediumTankGranate implements Granate {
     private int dmg;
     private int penetration;
     public MediumTankGranate(){
-        this.dmg = 250;
+        this.dmg = 325;
         this.penetration = 301;
     }
     @Override

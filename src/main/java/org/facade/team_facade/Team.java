@@ -39,6 +39,9 @@ public class Team {
         return this.lightTank.isDestroyed() && this.mediumTank.isDestroyed() && this.heavyTank.isDestroyed();
     }
 
+    public boolean isLightDestroyed(){return this.lightTank.isDestroyed();}
+    public boolean isMediumDestroyed(){return this.mediumTank.isDestroyed();}
+    public boolean isHeavyDestroyed(){return this.heavyTank.isDestroyed();}
     public void shootWithLightTank(Tank tank){ this.lightTank.shoot(tank); }
     public void shootWithMediumTank(Tank tank){ this.mediumTank.shoot(tank); }
     public void shootWithHeavyTank(Tank tank){this.heavyTank.shoot(tank);}
