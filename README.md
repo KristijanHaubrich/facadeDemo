@@ -1,10 +1,12 @@
 # FACADE DESIGN PATTERN - TANK GAME EXAMPLE
+## INTRODUCTION
 This project is made for demostrating facade design pattern. Facade design pattern is a structural design pattern that provides a simplified interface to a complex system of classes, interfaces, or subsystems. It encapsulates the complexities of the subsystems and provides a unified interface to interact with them. This pattern promotes loose coupling between the client code and the subsystems, making the code more maintainable and easier to understand.
 
 ### 2 Key components of the Facade pattern:
 - Facade: This is the central class that provides a simplified interface to the client to access the subsystem or a group of subsystems. The facade delegates client requests to the appropriate objects within the subsystem.
 - Subsystem classes: These are the individual classes or components that represent the complex subsystem. They contain the implementation details and functionality that are hidden behind the facade
 
+## PROJECT DETAILS
 This project represent simple tank game. It has two interfaces. One interface is called [Tank](src/main/java/org/facade/tank/Tank.java) and represents all tanks. Second interface is called [Granate](src/main/java/org/facade/granate/Granate.java)  and represent all granates.
 3 classes that implement **Tank** interface and 3 classes that implement **Granate** interface are created:
 
@@ -22,7 +24,7 @@ Each tank and granate have their own implementation of their interface.
 
 There is also one class that represents results of trying to shoot one tank. It is important for delivering info to tank who shooted if he penetrated and/or killed tank. Class is called [Shooting Result](src/main/java/org/facade/shooting_result/ShootingResult.java). 
 
-## Team Facade
+## TEAM FACADE
 Finally, we have [Team](src/main/java/org/facade/team_facade/Team.java) class that represents facade. This class is using all funcionalities of subclasses (all tank classes) to deliver functions that are easy to use in game driver (**Main**). Team class has instances of all 3 types of tanks.
 ### Methods of team class:
 - int getCurrentTeamHP() - returns current team HP
