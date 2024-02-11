@@ -24,7 +24,7 @@ Each tank and granate have their own implementation of their interface.
 
 There is also one class that represents results of trying to shoot one tank. It is important for delivering info to tank who shooted if he penetrated and/or killed tank. Class is called [Shooting Result](src/main/java/org/facade/shooting_result/ShootingResult.java). 
 
-## TEAM FACADE
+## FACADE CLASS
 Finally, we have [Team](src/main/java/org/facade/team_facade/Team.java) class that represents facade. This class is using all funcionalities of subclasses (all tank classes) to deliver functions that are easy to use in game driver (**Main**). Team class has instances of all 3 types of tanks.
 ### Methods of team class:
 - int getCurrentTeamHP() - returns current team HP
