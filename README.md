@@ -38,6 +38,6 @@ Finally, we have [Team](src/main/java/org/facade/team_facade/Team.java) class th
 - void shootWithHeavyTank(Tank tank) - heavy tank of team attempt to shoot defender tank that is referenced as an argument of function
 - String toString() - returns string info about current team state
 
-## Rules of the game
+## RULES OF THE GAME
 Rules are very simple. There are 2 teams. Each team have one chance in each round to inflict damage to enemy team. Through console team can decide with which tank they want to shoot. Enemy team with **getDefender()** method gets their random defender for that round. After each round results of each team are displayed.
 When all tanks of one team are destroyed winner is announced. Driver class is called [Main](src/main/java/org/facade/Main.java).
